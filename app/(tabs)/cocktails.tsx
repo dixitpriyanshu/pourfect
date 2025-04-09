@@ -12,12 +12,9 @@ type Cocktail = {
 };
 
 export default function CocktailsScreen() {
-  const { query, setQuery } = useSearch();
+  const { setQuery } = useSearch();
   const [cocktails, setCocktails] = useState<Cocktail[]>([]);
   const [loading, setLoading] = useState(true);
-  const filteredCocktails = cocktails.filter((c) =>
-    c.name.toLowerCase().includes(query.toLowerCase())
-  );
 
   useFocusEffect(
     useCallback(() => {
@@ -47,7 +44,7 @@ export default function CocktailsScreen() {
         <Text style={{ textAlign: "center" }}>Loading cocktails...</Text>
       ) : (
         <FlatList
-          data={filteredCocktails}
+          data={cocktails}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => <CocktailCard {...item} />}
           contentContainerStyle={{

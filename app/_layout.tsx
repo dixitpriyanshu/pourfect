@@ -4,6 +4,7 @@ import { Stack } from "expo-router";
 import "react-native-reanimated";
 import CustomHeader from "@/components/CustomHeader";
 import SearchResultsOverlay from "@/components/SearchResultsOverlay";
+import TipToast from "@/components/TipToast";
 
 export default function RootLayout() {
   return (
@@ -16,6 +17,7 @@ export default function RootLayout() {
           headerShown: false,
         }}
       />
+      <TipToast />
     </GestureHandlerRootView>
   );
 }

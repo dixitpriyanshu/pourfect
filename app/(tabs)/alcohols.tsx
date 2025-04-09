@@ -1,9 +1,9 @@
 import { View, FlatList, Text } from "react-native";
 import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
-import { useSearch } from "@/stores/useSearch";
 import { useFocusEffect } from "expo-router";
 import AlcoholCard from "@/components/AlcoholCard";
+import { useSearch } from "@/stores/useSearch";
 
 type Alcohol = {
   id: string;
@@ -14,7 +14,7 @@ type Alcohol = {
 export default function AlcoholsScreen() {
   const [alcohols, setAlcohols] = useState<Alcohol[]>([]);
   const [loading, setLoading] = useState(true);
-  const { query, setQuery } = useSearch();
+  const { setQuery } = useSearch();
 
   useFocusEffect(
     useCallback(() => {
@@ -38,17 +38,13 @@ export default function AlcoholsScreen() {
     fetchAlcohols();
   }, []);
 
-  const filteredAlcohols = alcohols.filter((a) =>
-    a.name.toLowerCase().includes(query.toLowerCase())
-  );
-
   return (
     <View style={{ flex: 1 }}>
       {loading ? (
         <Text style={{ textAlign: "center" }}>Loading alcohols...</Text>
       ) : (
         <FlatList
-          data={filteredAlcohols}
+          data={alcohols}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => <AlcoholCard {...item} />}
           contentContainerStyle={{
