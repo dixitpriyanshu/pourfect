@@ -2,12 +2,16 @@ import { useEffect, useState } from "react";
 import * as Network from "expo-network";
 
 export const useNetworkStatus = () => {
-  const [isConnected, setIsConnected] = useState(false);
   const state = Network.useNetworkState();
+  const [hydrated, setHydrated] = useState(false);
+  const [isConnected, setIsConnected] = useState<boolean | null>(null);
 
   useEffect(() => {
-    setIsConnected(state.isConnected?.valueOf() ?? false);
+    if (state.isConnected !== undefined) {
+      setIsConnected(state.isConnected);
+      setHydrated(true);
+    }
   }, [state]);
 
-  return isConnected;
+  return hydrated ? isConnected : null;
 };

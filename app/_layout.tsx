@@ -6,6 +6,7 @@ import CustomHeader from "@/components/CustomHeader";
 import SearchResultsOverlay from "@/components/SearchResultsOverlay";
 import TipToast from "@/components/TipToast";
 import ShakeDetector from "@/components/ShakeDetector";
+import { OfflineBanner } from "@/components/OfflineBanner";
 
 export default function RootLayout() {
   return (
@@ -20,6 +21,7 @@ export default function RootLayout() {
       />
       <TipToast />
       <ShakeDetector />
+      <OfflineBanner />
     </GestureHandlerRootView>
   );
 }
