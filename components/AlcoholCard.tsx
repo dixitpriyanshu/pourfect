@@ -20,10 +20,6 @@ export default function AlcoholCard({ id, name, image_url }: Props) {
     },
   });
 
-  if (!image) {
-    return <ActivityIndicator size="large" color="#0000ff" />;
-  }
-
   return (
     <Pressable
       onPress={() =>
@@ -39,17 +35,21 @@ export default function AlcoholCard({ id, name, image_url }: Props) {
         width: "45%",
       }}
     >
-      <Image
-        style={{
-          width: "auto",
-          height: 200,
-          overflow: "hidden",
-        }}
-        source={image}
-        placeholder={{ blurhash }}
-        contentFit="cover"
-        transition={1000}
-      />
+      {image ? (
+        <Image
+          style={{
+            width: "auto",
+            height: 200,
+            overflow: "hidden",
+          }}
+          source={image}
+          placeholder={{ blurhash }}
+          contentFit="cover"
+          transition={1000}
+        />
+      ) : (
+        <ActivityIndicator size="large" color="#000" />
+      )}
       <View style={{ padding: 12, backgroundColor: "#EEE" }}>
         <Text style={{ fontWeight: "bold", fontSize: 16, textAlign: "center" }}>
           {name}

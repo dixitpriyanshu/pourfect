@@ -1,6 +1,6 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { useFavorites } from "@/store/useFavorites";
+
 import {
   ScrollView,
   View,
@@ -10,9 +10,10 @@ import {
   ActivityIndicator,
   TouchableOpacity,
 } from "react-native";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { Ionicons } from "@expo/vector-icons";
+import { useFavorites } from "@/stores/useFavorites";
 
 const CocktailDetail = () => {
   const { id } = useLocalSearchParams();
@@ -26,7 +27,9 @@ const CocktailDetail = () => {
 
   const { addFavorite, removeFavorite, favorites } = useFavorites();
 
-  const isSaved = favorites.some((item) => item.id === cocktail.id);
+  const isSaved = useMemo(() => {
+    return favorites.some((item) => item.id === cocktail?.id);
+  }, [cocktail, favorites]);
 
   const handleToggleFavorite = () => {
     if (isSaved) {
