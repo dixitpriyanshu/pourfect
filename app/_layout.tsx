@@ -5,6 +5,7 @@ import "react-native-reanimated";
 import CustomHeader from "@/components/CustomHeader";
 import SearchResultsOverlay from "@/components/SearchResultsOverlay";
 import TipToast from "@/components/TipToast";
+import ShakeDetector from "@/components/ShakeDetector";
 
 export default function RootLayout() {
   return (
@@ -18,6 +19,7 @@ export default function RootLayout() {
         }}
       />
       <TipToast />
+      <ShakeDetector />
     </GestureHandlerRootView>
   );
 }
