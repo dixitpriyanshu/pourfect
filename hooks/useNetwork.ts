@@ -3,15 +3,11 @@ import * as Network from "expo-network";
 
 export const useNetworkStatus = () => {
   const [isConnected, setIsConnected] = useState(false);
+  const state = Network.useNetworkState();
 
   useEffect(() => {
-    const getnetworkState = async () => {
-      const net = await Network.getNetworkStateAsync();
-      setIsConnected(net.isConnected?.valueOf() || false);
-    };
-
-    getnetworkState();
-  }, []);
+    setIsConnected(state.isConnected?.valueOf() ?? false);
+  }, [state]);
 
   return isConnected;
 };
