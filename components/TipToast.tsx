@@ -21,7 +21,7 @@ const TipToast = () => {
         duration: 300,
         useNativeDriver: true,
       }).start(() => setVisible(false));
-    }, 5000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
