@@ -1,6 +1,4 @@
-import { View, FlatList, Text, TouchableOpacity, Image } from "react-native";
-import { useRouter } from "expo-router";
-import { Ionicons } from "@expo/vector-icons";
+import { View, FlatList, Text } from "react-native";
 import { useFavorites } from "@/stores/useFavorites";
 import CocktailCard from "@/components/CocktailCard";
 
