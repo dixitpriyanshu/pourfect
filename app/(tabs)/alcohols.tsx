@@ -1,19 +1,12 @@
 import { View, FlatList, Text } from "react-native";
-import { useCallback, useEffect, useState } from "react";
-import { supabase } from "@/lib/supabase";
+import { useCallback } from "react";
 import { useFocusEffect } from "expo-router";
 import AlcoholCard from "@/components/AlcoholCard";
 import { useSearch } from "@/stores/useSearch";
-
-type Alcohol = {
-  id: string;
-  name: string;
-  image_url: string;
-};
+import { useAlcohols } from "@/stores/useAlcohols";
 
 export default function AlcoholsScreen() {
-  const [alcohols, setAlcohols] = useState<Alcohol[]>([]);
-  const [loading, setLoading] = useState(true);
+  const { alcohols, loading } = useAlcohols();
   const { setQuery } = useSearch();
 
   useFocusEffect(
@@ -22,21 +15,6 @@ export default function AlcoholsScreen() {
       return () => {};
     }, [])
   );
-
-  useEffect(() => {
-    const fetchAlcohols = async () => {
-      const { data, error } = await supabase
-        .from("alcohols")
-        .select("id, name, image_url")
-        .order("name");
-
-      if (error) console.error("Supabase error:", error);
-      else setAlcohols(data || []);
-      setLoading(false);
-    };
-
-    fetchAlcohols();
-  }, []);
 
   return (
     <View style={{ flex: 1 }}>

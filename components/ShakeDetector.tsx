@@ -4,7 +4,7 @@ import { useRouter } from "expo-router";
 import { Alert, Vibration } from "react-native";
 import { supabase } from "@/lib/supabase"; // adjust based on your structure
 
-const THRESHOLD = 1.5;
+const THRESHOLD = 2;
 
 type Cocktail = {
   id: string;
