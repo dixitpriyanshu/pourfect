@@ -2,9 +2,34 @@
 
 **Pourfect** is a beautifully crafted, cross-platform mobile app built with **Expo React Native** for discovering, exploring, and learning about cocktails. Whether you're a mixology enthusiast or a casual sipper, Pourfect helps you dive into a curated world of drinks — with offline support, fun interactions, and a personalized experience.
 
+## 📸 Screenshots
+
 <div align="center">
-  <img src="./assets/images/splash-icon.png" alt="Pourfect App Preview" width="300"/>
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="./assets/images/screenshots/1.png" alt="Home Screen" width="200"/>
+    </td>
+    <td align="center">
+      <img src="./assets/images/screenshots/2.png" alt="Cocktail Detail" width="200"/>
+    </td>
+    <td align="center">
+      <img src="./assets/images/screenshots/3.png" alt="Alcohol List" width="200"/>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./assets/images/screenshots/4.png" alt="Favorites Screen" width="200"/>
+    </td>
+    <td align="center">
+      <img src="./assets/images/screenshots/5.png" alt="Tip of the Day" width="200"/>
+    </td>
+  </tr>
+</table>
+
 </div>
+
 
 ---
 
@@ -53,6 +78,10 @@ cd pourfect
 bun install
 npx expo start
 ```
+
+There is a pourfect_mock.sql for tables creation and entering the mock data, make sure you replace the images link to your images.
+
+You can store images in Supabase storage bucket or your prefered storage option.
 
 Make sure to:
 
