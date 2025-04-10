@@ -100,17 +100,12 @@ Make sure to:
 📲 APK Download
 You can try the app instantly by downloading the latest APK below:
 
-🔗 Download Pourfect.apk
+🔗 Download [Pourfect.apk](https://drive.google.com/file/d/1imHeSXebsK4mY8eAIvxrukYsJo-H5n2w/view?usp=sharing)
 
 (Built using EAS Build + Expo Dev Client)
 
 🧑‍💻 Contributing
 This is a personal/portfolio project, but open to suggestions and ideas. Feel free to fork or submit issues!
-
-
-
-
-
 
 🧠 Lessons Learned
 
