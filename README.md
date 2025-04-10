@@ -77,7 +77,12 @@ git clone https://github.com/dixitpriyanshu/pourfect.git
 cd pourfect
 bun install
 npx expo start
+
 ```
+
+### Create a Development Build
+
+⚠️ Since Pourfect uses native libraries like react-native-mmkv and expo-sensors, you'll need to create a development build using Expo Dev Client before running the app.
 
 There is a pourfect_mock.sql for tables creation and entering the mock data, make sure you replace the images link to your images.
 
