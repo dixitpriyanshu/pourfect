@@ -2,6 +2,9 @@
   "name": "pourfect",
   "main": "expo-router/entry",
   "version": "1.0.0",
+  "author": "Priyanshu Dixit",
+  "license": "MIT",
+  "description": "Pourfect is a mobile application that helps you track your water intake and stay hydrated.",
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
